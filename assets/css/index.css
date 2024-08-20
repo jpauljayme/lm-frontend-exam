@@ -1,0 +1,106 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.grid__wrapper{
+    display: grid;
+    grid-template-areas: 
+    'header'
+    'main'
+    'footer';
+    grid-template-rows: 100px 1fr 200px;
+    margin: 0 100px;
+    gap: 10px;
+}
+
+.grid__header{
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid__header_left{
+    display: flex;
+    align-items: flex-end;
+    margin: auto;
+    gap: 5px;
+}
+
+.grid__header_left img{
+    width: 50%;
+}
+.grid__header_left h5{
+   margin-bottom: 11px;
+}
+
+.grid__header_right{
+    display: grid;
+    justify-items: center;
+}
+
+.grid__header_right-list{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.grid__header_right-list i{
+   color:green;
+}
+
+.grid__header_right-list li {
+    display: flex;
+    align-items: center; /* Vertically center the icon with the text */
+    margin-bottom: 8px; /* Space between list items */
+}
+
+.grid__header_right-list li i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.grid__main{
+    grid-area: main;
+    background: linear-gradient(to bottom, rgb(30, 59, 117) 70%, rgba(30, 59, 117, 0.6) 100%);
+    margin-left: -100px;
+    margin-right: -100px;
+    padding: 100px;
+    
+    display: grid;
+    grid-template-areas: 
+    'headline headline'
+    'search reviews';
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+}
+
+.main__headline{
+    grid-area: headline;
+}
+
+.main__search{
+    grid-area: search;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+}
+
+.main__search_location{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.main__search_location input{
+    width: 60%;
+    border-radius: 20px ;
+    border: none;
+}
+
+.main__reviews{
+    grid-area: reviews;
+}
+
+.grid_footer{
+    grid-area: footer;
+}

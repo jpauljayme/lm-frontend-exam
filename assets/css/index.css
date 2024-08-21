@@ -4,6 +4,10 @@ body{
     box-sizing: border-box;
     font-family: sans-serif;
 }
+
+input{
+    box-sizing: border-box;
+}
 .grid__wrapper{
     display: grid;
     grid-template-areas: 
@@ -70,7 +74,7 @@ body{
     grid-template-areas: 
     'headline headline'
     'search reviews';
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto 1fr;
     grid-template-columns: 1fr 1fr;
     color: white;
 }
@@ -82,7 +86,7 @@ body{
 .main__search{
     grid-area: search;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     gap: 10px;
 }
 
@@ -91,10 +95,30 @@ body{
     grid-template-rows: 1fr 1fr;
 }
 
+#suggestions{
+    width: 40%;
+    max-height: 150px;
+    overflow-y: auto;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.main__category{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
 .main__search_location input{
     width: 60%;
     border-radius: 20px ;
     border: none;
+    height: 30px;
+}
+
+.main__category-select{
+    border-radius: 20px;
+    height: 30px;
+    width: 60%;
 }
 
 .main__reviews{

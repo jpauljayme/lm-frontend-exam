@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -15,7 +11,8 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     </head>
     <body>        
-        <script src="" async defer></script>
+        <script src="../assets/js/util.js" async defer></script>
+        <script src="../assets/js/modal.js" async defer></script>
         <div class="grid__wrapper">
             <header class="grid__header">
                 <div class="grid__header_left">
@@ -39,12 +36,26 @@
                    <div class="main__search_location">
                     <label for="location">Enter Zip Code or City:</label>
                     <input class="main__search_location-input" id="location" 
-                    value="00000"
+                    onkeyup="showSuggestions(this.value)"
                     required/>
+                    <div id="suggestions"></div>
                    </div>
-                   <div class="main__search_location">
+                   <div class="main__category">
                     <label for="category">Choose a category:</label>
-                    <input class="main__search_location-input" id="category"/>
+                    <select class="main__category-select" id="category" onchange="showModal()">
+                        <option value="family">Family</option>
+                        <option value="criminalDefense">Criminal Defense</option>
+                        <option value="business">Business</option>
+                        <option value="personalInjury">Personal Injury</option>
+                        <option value="bankruptcyAndFinances">Bankruptcy & Finances</option>
+                        <option value="productsAndServices">Products & Services</option>
+                        <option value="7">Employment</option>
+                        <option value="8">Real Estate</option>
+                        <option value="9">Immigration</option>
+                        <option value="10">Wills, Trusts & Estates</option>
+                        <option value="11">Government</option>
+                        <option value="12">Intellectual Property</option>
+                    </select>
                    </div>
                 </div>
                 <div class="main__reviews">
@@ -53,5 +64,9 @@
             </main>
             <footer>Footer</footer>
         </div>
+        <dialog open>
+            <p>Which Family Law issue(s) apply to your case?</p>
+            
+          </dialog>
     </body>
 </html>

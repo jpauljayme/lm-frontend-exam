@@ -1,6 +1,5 @@
 function showSuggestions(value){
-    if(value.length === 0){
-        console.log("empty")
+    if(value.length === 0){gi
         document.getElementById("suggestions").innerHTML = "";
         return;
     }

@@ -30,10 +30,9 @@ function fetchSuggestions(query){
             "Nowheresville, XX 00000",
             "Morris, IL 60450"
         ]
-        console.log(query);
-        console.log(dummySuggestions);
+
         let filteredValue = dummySuggestions.filter(suggestion => suggestion.includes(query));
-        console.log(filteredValue);
+
         resolve(filteredValue);
     });
 }

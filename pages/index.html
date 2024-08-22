@@ -1,72 +1,164 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Legal Match</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../assets/css/index.css">
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    </head>
-    <body>        
-        <script src="../assets/js/util.js" async defer></script>
-        <script src="../assets/js/modal.js" async defer></script>
-        <div class="grid__wrapper">
-            <header class="grid__header">
-                <div class="grid__header_left">
-                    <img src="../assets/images/logo.png"/>
-                    <h5>FIND THE RIGHT LAWYER NOW</h5>
-                </div>
-                <div class="grid__header_right">
-                    <ul class="grid__header_right-list">
-                        <li><i class="bi bi-check"></i>No fee to present your case</li>
-                        <li><i class="bi bi-check"></i>Choose from lawyers in your area</li>
-                        <li><i class="bi bi-check"></i>A 100% confidential service</li>
-                    </ul>
-                </div>
-            </header>
-            <main class="grid__main">
-                <div class="main__headline">
-                    <h2>Find a Lawyer for your Legal Issue</h2>
-                    <h3>Fast, Free and Confidential</h3>
-                </div>
-                <div class="main__search">
-                   <div class="main__search_location">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Legal Match</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../assets/css/index.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <script src="../assets/js/util.js" async defer></script>
+    <script src="../assets/js/modal.js" async defer></script>
+    <div class="grid__wrapper">
+        <header class="grid__header">
+            <div class="grid__header_left">
+                <img src="../assets/images/logo.png" />
+                <h5>FIND THE RIGHT LAWYER NOW</h5>
+            </div>
+            <div class="grid__header_right">
+                <ul class="grid__header_right-list">
+                    <li><i class="bi bi-check"></i>No fee to present your case</li>
+                    <li><i class="bi bi-check"></i>Choose from lawyers in your area</li>
+                    <li><i class="bi bi-check"></i>A 100% confidential service</li>
+                </ul>
+            </div>
+        </header>
+        <main class="grid__main">
+            <div class="main__headline">
+                <h1 class="main__headline-title">Find a Lawyer for your Legal Issue</h1>
+                <h2 class="main__headline-subtitle">Fast, Free and Confidential</h2>
+            </div>
+            <div class="main__search">
+                <div class="main__search_location">
                     <label for="location">Enter Zip Code or City:</label>
-                    <input class="main__search_location-input" id="location" 
-                    onkeyup="showSuggestions(this.value)"
-                    required/>
-                    <div id="suggestions"></div>
-                   </div>
-                   <div class="main__category">
+                    <div class="main__search-input-wrapper">
+                        <i class="main__search-icon bi bi-1-circle-fill"></i>
+                        <input class="main__search-input" id="location" onkeyup="showSuggestions(this.value)"
+                            placeholder="Does not have to be where you live" required />
+                        <div id="suggestions"></div>
+                    </div>
+                </div>
+                <div class="main__category">
                     <label for="category">Choose a category:</label>
-                    <select class="main__category-select" id="category" onchange="showModal()">
-                        <option value="family">Family</option>
-                        <option value="criminalDefense">Criminal Defense</option>
-                        <option value="business">Business</option>
-                        <option value="personalInjury">Personal Injury</option>
-                        <option value="bankruptcyAndFinances">Bankruptcy & Finances</option>
-                        <option value="productsAndServices">Products & Services</option>
-                        <option value="7">Employment</option>
-                        <option value="8">Real Estate</option>
-                        <option value="9">Immigration</option>
-                        <option value="10">Wills, Trusts & Estates</option>
-                        <option value="11">Government</option>
-                        <option value="12">Intellectual Property</option>
-                    </select>
-                   </div>
+                    <div class="main__search-input-wrapper">
+                        <i class="main__search-icon bi bi-2-circle-fill"></i>
+                        <select class="main__category-select" id="category" onchange="showModal()">
+                            <option value="0" disabled selected>Click to choose a legal category</option>
+                            <option value="1">Family</option>
+                            <option value="2">Criminal Defense</option>
+                            <option value="3">Business</option>
+                            <option value="4">Personal Injury</option>
+                            <option value="5">Bankruptcy & Finances</option>
+                            <option value="6">Products & Services</option>
+                            <option value="7">Employment</option>
+                            <option value="8">Real Estate</option>
+                            <option value="9">Immigration</option>
+                            <option value="10">Wills, Trusts & Estates</option>
+                            <option value="11">Government</option>
+                            <option value="12">Intellectual Property</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="main__reviews">
-                    Reviews
+            </div>
+            <div class="reviews">
+                <div class="reviews__header">
+                    <p>Clients Review LegalMatch lawyers</p>
                 </div>
-            </main>
-            <footer>Footer</footer>
+                <div class="reviews__list">
+                    <div class="reviews__item">
+                        <div class="reviews__image-container">
+                            <img src="../assets/images/lawyer_one.png" class="reviews__image" />
+                            <div class="reviews__info">
+                                <p class="reviews__name">Mitchell M.</p>
+                                <p class="reviews__address">Cherry Hill, NJ</p>
+                            </div>
+                        </div>
+                        <div class="reviews__content">
+                            <div class="reviews__content-title">
+                                <p class="reviews__content-category">Family Law</p>
+                                <div class="reviews__content_rating">
+                                    <i class="reviews__content-star bi bi-star-fill"></i>
+                                    <i class="reviews__content-star bi bi-star-fill"></i>
+                                    <i class="reviews__content-star bi bi-star-fill"></i>
+                                    <i class="reviews__content-star bi bi-star-fill"></i>
+                                    <i class="reviews__content-star bi bi-star-fill"></i>
+                                </div>
+                            </div>
+                            <p class="reviews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac sagittis nibh...</p>
+                            <div class="reviews__link">
+                                <p class="reviews__link-text">Read Review</p>
+                                <img class="reviews__link-icon" src="../assets/images/read_review.png" alt="icon" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews__item">
+                        <div class="reviews__image-container">
+                            <img src="../assets/images/lawyer_two.png" class="reviews__image" />
+                            <div class="reviews__info">
+                                <p class="reviews__name">Joel C.</p>
+                                <p class="reviews__address">Little Rock, AK</p>
+                            </div>
+                        </div>
+                        <div class="reviews__content">
+                            <div class="reviews__content-title">
+                                <p class="reviews__content-category">Job & Employment Law</p>
+                                <div class="reviews__content_rating">
+                                    <i class="reviews__content-star bi bi-star-fill"></i>
+                                    <i class="reviews__content-star bi bi-star-fill"></i>
+                                    <i class="reviews__content-star bi bi-star-fill"></i>
+                                    <i class="reviews__content-star bi bi-star-fill"></i>
+                                    <i class="reviews__content-star bi bi-star-fill"></i>
+                                </div>
+                            </div>
+                            <p class="reviews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac sagittis nibh...</p>
+                            <div class="reviews__link">
+                                <p class="reviews__link-text" onclick="showModal()">Read Review</p>
+                                <img class="reviews__link-icon" src="../assets/images/read_review.png" alt="icon" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews__item">
+                        <div class="reviews__image-container">
+                            <img src="../assets/images/lawyer_three.png" class="reviews__image" />
+                            <div class="reviews__info">
+                                <p class="reviews__name">Brigida R.</p>
+                                <p class="reviews__address">Dallas, TX</p>
+                            </div>
+                        </div>
+                        <div class="reviews__content">
+                            <div class="reviews__content-title">
+                                <p class="reviews__content-category">Family Law</p>
+                                <div class="reviews__content_rating">
+                                    <i class="reviews__content-star bi bi-star-fill"></i>
+                                    <i class="reviews__content-star bi bi-star-fill"></i>
+                                    <i class="reviews__content-star bi bi-star-fill"></i>
+                                    <i class="reviews__content-star bi bi-star-fill"></i>
+                                    <i class="reviews__content-star bi bi-star-fill"></i>
+                                </div>
+                            </div>
+                            <p class="reviews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac sagittis nibh...</p>
+                            <div class="reviews__link">
+                                <p class="reviews__link-text">Read Review</p>
+                                <img class="reviews__link-icon" src="../assets/images/read_review.png" alt="icon" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>Footer</footer>
+    </div>
+    <dialog id="categoryDialog">
+        <div id="categoryDialog__wrapper">
         </div>
-        <dialog open>
-            <p>Which Family Law issue(s) apply to your case?</p>
-            
-          </dialog>
-    </body>
+    </dialog>
+    <div id="modalOverlay"></div>
+</body>
+
 </html>

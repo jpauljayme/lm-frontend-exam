@@ -1,6 +1,5 @@
 const modal = document.getElementById("modal");
 const modalOverlay = document.getElementById("modalOverlay");
-const closeModal = document.getElementById("closeModal");
 
 function showModal() {
     const categoryElement = document.getElementById("category");
@@ -220,11 +219,18 @@ function showModal() {
 
         dialogWrapper.appendChild(fourthRow);
 
-        modal.showModal();
-        modalOverlay.style.display = "block";
+        const closeSpan = document.createElement("span");
+        closeSpan.className = "close-button";
+        closeSpan.id = "closeModal";
+        closeSpan.textContent = "CLOSE";
+        // Add event listener to the close button
+        closeSpan.addEventListener("click", closeModalHandler);
+
+        dialogWrapper.appendChild(closeSpan);
     }
 
-
+    modal.showModal();
+    modalOverlay.style.display = "block";
 }
 
 // Function to close the modal
@@ -232,6 +238,3 @@ function closeModalHandler() {
     modal.close();
     modalOverlay.style.display = "none";
 }
-
-// Add event listener to the close button
-closeModal.addEventListener("click", closeModalHandler);

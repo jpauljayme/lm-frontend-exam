@@ -382,10 +382,12 @@ dialog {
 }
 
 .close-button {
+    font-size: x-small;
+    display: flex;
+    justify-content: flex-end;
     cursor: pointer;
-    color: red; /* Or any color you prefer */
+    color: rgb(106, 107, 248); 
     font-weight: bold;
-    float: right; /* Align to the right */
     padding: 5px;
     margin: 10px;
 }
